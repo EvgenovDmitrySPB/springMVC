@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/", "/home").permitAll()
+                .antMatchers("/", "/home","/jsp/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -64,7 +64,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //    public InternalResourceViewResolver jspViewResolver() {
 //        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 //        viewResolver.setOrder(1);
-//        viewResolver.setPrefix("/templates/");
+//        viewResolver.setPrefix("/");
 //        viewResolver.setSuffix(".jsp");
 //        return viewResolver;
 //    }
